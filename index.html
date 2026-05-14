@@ -189,6 +189,21 @@
     .footer-col a:hover { opacity: 1; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 1.5rem; text-align: center; font-size: .8rem; opacity: .45; }
 
+    /* SKELETON */
+    .skeleton { background: linear-gradient(90deg,#f0e8dc 25%,#e4d5c1 50%,#f0e8dc 75%); background-size:200% 100%; animation:shimmer 1.4s infinite; border-radius:14px; }
+    @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+    .skel-card { background:var(--white); border-radius:14px; overflow:hidden; box-shadow:0 4px 20px rgba(59,35,20,.09); }
+    .skel-img { height:180px; }
+    .skel-body { padding:1.2rem; display:flex; flex-direction:column; gap:.75rem; }
+    .skel-line { height:13px; border-radius:6px; }
+    .skel-line.s { width:35%; }
+    .skel-line.m { width:65%; }
+
+    /* FILTERS */
+    .filters { display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center; margin-bottom:2.5rem; }
+    .filter-btn { padding:.45rem 1.2rem; border-radius:50px; border:2px solid var(--cream-dark); background:transparent; font-family:'Lato',sans-serif; font-size:.85rem; font-weight:700; color:var(--muted); cursor:pointer; transition:all .2s; }
+    .filter-btn:hover,.filter-btn.active { border-color:var(--brown); background:var(--brown); color:var(--white); }
+
     /* BURGER */
     .burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .4rem; }
     .burger span { display: block; width: 24px; height: 2px; background: var(--brown-dark); border-radius: 2px; transition: all .3s; }
@@ -294,100 +309,13 @@
   <div class="center">
     <span class="label">Our Menu</span>
     <h2 class="title">Crafted with Care</h2>
-    <p class="sub">Every item on our menu is made fresh daily using quality ingredients. Something for every taste and mood.</p>
+    <p class="sub" id="menu-sub">Loading fresh items from the kitchen...</p>
   </div>
-  <div class="menu-grid">
-
-    <div class="card">
-      <div class="card-thumb coffee">☕</div>
-      <div class="card-body">
-        <div class="card-cat">Coffee</div>
-        <h3>Classic Espresso</h3>
-        <p>Rich, bold, and perfectly pulled. A timeless shot of pure coffee.</p>
-        <div class="card-foot"><span class="price">₹120</span><span class="badge badge-hot">🔥 Hot</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb coffee">🥛</div>
-      <div class="card-body">
-        <div class="card-cat">Coffee</div>
-        <h3>Creamy Cappuccino</h3>
-        <p>Espresso with velvety steamed milk foam. Cozy and satisfying.</p>
-        <div class="card-foot"><span class="price">₹180</span><span class="badge badge-pop">❤️ Popular</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb coffee">🧊</div>
-      <div class="card-body">
-        <div class="card-cat">Coffee</div>
-        <h3>Iced Caramel Latte</h3>
-        <p>Cold brew espresso, caramel drizzle, and chilled milk over ice.</p>
-        <div class="card-foot"><span class="price">₹220</span><span class="badge badge-new">✨ New</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb tea">🍵</div>
-      <div class="card-body">
-        <div class="card-cat">Tea</div>
-        <h3>Masala Chai</h3>
-        <p>Traditional spiced tea brewed with ginger, cardamom &amp; cloves.</p>
-        <div class="card-foot"><span class="price">₹90</span><span class="badge badge-pop">❤️ Popular</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb tea">🌿</div>
-      <div class="card-body">
-        <div class="card-cat">Tea</div>
-        <h3>Matcha Latte</h3>
-        <p>Premium Japanese matcha whisked with warm oat milk. Earthy &amp; smooth.</p>
-        <div class="card-foot"><span class="price">₹200</span><span class="badge badge-new">✨ New</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb pastry">🥐</div>
-      <div class="card-body">
-        <div class="card-cat">Pastry</div>
-        <h3>Butter Croissant</h3>
-        <p>Freshly baked every morning. Flaky, golden, and irresistible.</p>
-        <div class="card-foot"><span class="price">₹110</span><span class="badge badge-hot">🔥 Hot</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb cake">🍰</div>
-      <div class="card-body">
-        <div class="card-cat">Cake</div>
-        <h3>Blueberry Cheesecake</h3>
-        <p>Creamy New York-style cheesecake with a fresh blueberry compote.</p>
-        <div class="card-foot"><span class="price">₹280</span><span class="badge badge-pop">❤️ Popular</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb food">🥪</div>
-      <div class="card-body">
-        <div class="card-cat">Food</div>
-        <h3>Grilled Veggie Sandwich</h3>
-        <p>Seasonal veggies, pesto spread, and mozzarella on toasted sourdough.</p>
-        <div class="card-foot"><span class="price">₹240</span><span class="badge badge-new">✨ New</span></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-thumb juice">🧃</div>
-      <div class="card-body">
-        <div class="card-cat">Juice</div>
-        <h3>Cold-Press Orange</h3>
-        <p>Freshly squeezed navel oranges. No sugar, no preservatives. Pure citrus.</p>
-        <div class="card-foot"><span class="price">₹150</span><span class="badge badge-hot">🔥 Fresh</span></div>
-      </div>
-    </div>
-
+  <div class="filters" id="filters" style="display:none"></div>
+  <div class="menu-grid" id="menu-grid">
+    <div class="skel-card"><div class="skeleton skel-img"></div><div class="skel-body"><div class="skeleton skel-line s"></div><div class="skeleton skel-line m"></div><div class="skeleton skel-line"></div></div></div>
+    <div class="skel-card"><div class="skeleton skel-img"></div><div class="skel-body"><div class="skeleton skel-line s"></div><div class="skeleton skel-line m"></div><div class="skeleton skel-line"></div></div></div>
+    <div class="skel-card"><div class="skeleton skel-img"></div><div class="skel-body"><div class="skeleton skel-line s"></div><div class="skeleton skel-line m"></div><div class="skeleton skel-line"></div></div></div>
   </div>
 </section>
 
@@ -504,12 +432,96 @@
 </footer>
 
 <script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open')
+  const API = 'https://web-os-final.vercel.app/api/public/test-business'
+  let allProducts = []
+
+  // ── Fetch products from admin panel ──────────────────────────────
+  async function loadProducts() {
+    try {
+      const res = await fetch(API)
+      const data = await res.json()
+      allProducts = (data.products || []).filter(p => p.status === 'ACTIVE')
+      buildFilters(allProducts)
+      renderProducts(allProducts)
+      document.getElementById('menu-sub').textContent =
+        allProducts.length ? `${allProducts.length} items crafted with care` : 'Check back soon — new items coming!'
+    } catch {
+      document.getElementById('menu-grid').innerHTML = `
+        <div style="grid-column:1/-1;text-align:center;padding:3rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem">🔌</div>
+          <h3 style="color:var(--brown-dark);margin-bottom:.5rem">Couldn't load menu</h3>
+          <p style="color:var(--muted)">Please check back shortly.</p>
+        </div>`
+    }
   }
-  function closeMenu() {
-    document.getElementById('mobileMenu').classList.remove('open')
+
+  // ── Build category filter buttons ─────────────────────────────────
+  function buildFilters(products) {
+    const cats = [...new Set(products.map(p => p.category).filter(Boolean))]
+    if (!cats.length) return
+    const wrap = document.getElementById('filters')
+    wrap.style.display = 'flex'
+    wrap.innerHTML = `<button class="filter-btn active" onclick="filterBy('all',this)">All</button>`
+      + cats.map(c => `<button class="filter-btn" onclick="filterBy('${c}',this)">${c}</button>`).join('')
   }
+
+  function filterBy(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'))
+    btn.classList.add('active')
+    renderProducts(cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat))
+  }
+
+  // ── Render product cards ──────────────────────────────────────────
+  function renderProducts(products) {
+    const grid = document.getElementById('menu-grid')
+    if (!products.length) {
+      grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:3rem"><div style="font-size:2.5rem;margin-bottom:1rem">🍽️</div><h3 style="color:var(--brown-dark)">No items here yet</h3><p style="color:var(--muted)">Add products in your admin panel to see them here.</p></div>`
+      return
+    }
+    grid.innerHTML = products.map(p => {
+      const img = p.images?.[0]
+      const thumb = img
+        ? `<img src="${img}" alt="${esc(p.name)}" style="width:100%;height:180px;object-fit:cover" onerror="this.parentElement.innerHTML='<div class=\\'card-thumb food\\'>${emoji(p.category)}</div>'">`
+        : `<div class="card-thumb ${colorClass(p.category)}">${emoji(p.category)}</div>`
+      const compare = p.comparePrice > p.price
+        ? `<span style="font-size:.8rem;color:var(--muted);text-decoration:line-through;margin-right:.3rem">$${(+p.comparePrice).toFixed(2)}</span>` : ''
+      const badge = p.featured ? `<span class="badge badge-hot">⭐ Featured</span>`
+        : p.stock === 0 ? `<span class="badge" style="background:#fee2e2;color:#991b1b">Sold Out</span>` : ''
+      return `
+        <div class="card">
+          ${thumb}
+          <div class="card-body">
+            ${p.category ? `<div class="card-cat">${esc(p.category)}</div>` : ''}
+            <h3>${esc(p.name)}</h3>
+            <p>${p.description ? esc(p.description) : 'A delightful item made fresh for you.'}</p>
+            <div class="card-foot">
+              <span class="price">${compare}$${(+p.price).toFixed(2)}</span>
+              ${badge}
+            </div>
+          </div>
+        </div>`
+    }).join('')
+  }
+
+  // ── Helpers ───────────────────────────────────────────────────────
+  function esc(s) { return s ? String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '' }
+
+  function emoji(cat) {
+    const map = { coffee:'☕', tea:'🍵', pastry:'🥐', pastries:'🥐', cake:'🍰', cakes:'🍰',
+      juice:'🧃', food:'🍽️', drink:'🥤', drinks:'🥤', snack:'🍿', sandwich:'🥪',
+      dessert:'🍮', cookie:'🍪', bread:'🍞', humans:'🧑' }
+    return map[(cat||'').toLowerCase()] || '🍽️'
+  }
+
+  function colorClass(cat) {
+    const map = { coffee:'coffee', tea:'tea', pastry:'pastry', pastries:'pastry',
+      cake:'cake', cakes:'cake', juice:'juice', food:'food' }
+    return map[(cat||'').toLowerCase()] || 'food'
+  }
+
+  // ── Nav & Toast ───────────────────────────────────────────────────
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open') }
+  function closeMenu()  { document.getElementById('mobileMenu').classList.remove('open') }
 
   function showToast(msg) {
     const t = document.getElementById('toast')
@@ -523,6 +535,8 @@
     showToast('Thanks for subscribing! ☕')
     e.target.reset()
   }
+
+  loadProducts()
 </script>
 
 </body>
